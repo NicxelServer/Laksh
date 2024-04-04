@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +18,29 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/', function () {
+    $data = [
+        'message' => 'Welcome to our API!',
+        'status' => 'success'
+    ];
+
+    return response()->json($data);
 });
 
-Route::post('register',[UserController::class,'register']);
+
+Route::post('/adminlogs',[AuthController::class,'login']);
+
+Route::middleware(['preventBackHistory'])->group(function () {
+
+
+
+});
+
+Route::post('/register',[UserController::class,'register']);
+
+
+
