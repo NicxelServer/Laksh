@@ -31,8 +31,16 @@ Route::get('/', function () {
     return response()->json($data);
 });
 
-Route::post('/register',[UserController::class,'register']);
-
-//Route::post('/login',[AdminController::class,'login']);
 
 Route::post('/adminlogs',[AuthController::class,'login']);
+
+Route::middleware(['preventBackHistory'])->group(function () {
+
+
+
+});
+
+Route::post('/register',[UserController::class,'register']);
+
+
+
