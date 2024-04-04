@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+//import { useHistory } from 'react-router-dom'
 
 function Registration() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    //const history = useHistory();
 
     async function signUp() {
         let item = { name, password, email };
@@ -18,7 +20,9 @@ function Registration() {
             body: JSON.stringify(item)
         });
         result = await result.json();
-        console.warn("result", result);
+         console.warn("result", result);
+        // localStorage.setItem("user-info", JSON.stringify(result));
+        // history.push("/add")
     }
 
     return (

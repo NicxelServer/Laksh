@@ -1,13 +1,19 @@
 import "./App.css";
 import Allroutes from "./component/Allroutes";
 //import Registration from "./Registration";
-  function App() {
-    return (
-      <div>
-        <Allroutes /> 
-        {/* <Registration /> */}
-      </div>
-    );
-  }
+//import Login from "./Login";
+// import Home from "./AdminHome";
+function App() {
+  return (
+    <div>
+      <Allroutes /> 
+      {/* <Registration />
+      <br></br>
+      <Login /> */}
+      {/* <Home /> */}
+
+    </div>
+  );
+}
 
 export default App;
