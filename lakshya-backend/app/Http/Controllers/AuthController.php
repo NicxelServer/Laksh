@@ -13,7 +13,7 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         //find the user from email id
-        $user = User::where('u_email',$request->email)->first();
+        $user = User::where('u_email',$request->email)->where('u_designation','admin')->first();
         
         //check email is invalid return invalid error msg
         if (!$user) {

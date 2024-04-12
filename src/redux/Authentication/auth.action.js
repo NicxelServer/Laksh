@@ -83,7 +83,7 @@ export const AddAdmin =
 export const GetAllAdmin = () => async (dispatch) => {
   dispatch({ type: types.Get_Admin_LOADING });
   try {
-    let res = await GetAllAdminAPI();
+    let res = await getAllAdmins();
     dispatch({ type: types.Get_Admin_SUCCESS, payload: res });
   } catch (error) {
     dispatch({ type: types.Get_Admin_ERROR });
