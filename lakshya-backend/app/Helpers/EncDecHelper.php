@@ -30,7 +30,7 @@ class EncDecHelper{
 
 
 
-    public static function encdecId($id,$action)
+    public static function encDecId($id,$action)
 
     {
         $output = false;
