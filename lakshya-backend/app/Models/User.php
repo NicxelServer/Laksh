@@ -45,6 +45,17 @@ class User extends Authenticatable
 
     protected $table = 'mst_tbl_users';
     protected $primaryKey = 'tbl_user_id';
+
+    public function company()
+    {
+        return $this->hasOne(Company::class);
+    }
+    
+    public function userAddress()
+    {
+        return $this->hasOne(UserAddress::class);
+    }
+
     
 
 }
