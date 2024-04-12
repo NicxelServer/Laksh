@@ -67,6 +67,8 @@ Route::middleware(['preventBackHistory'])->group(function () {
 
 });
 
+Route::get('/hello',[AuthController::class,'hello']);
+
 Route::post('/register',[UserController::class,'register']);
 
 
