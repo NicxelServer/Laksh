@@ -39,7 +39,6 @@ const Navbar = () => {
 
   const handlechenge = (e) => {
     const { name, value } = e.target;
-    
     setCred({
       ...cred,
       [name]: value,
