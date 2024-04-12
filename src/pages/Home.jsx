@@ -46,6 +46,10 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { Link } from "react-router-dom";
 import SearchPageDetails from "../component/SearchPageDetails";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 const Home = () => {
   let [Carousel, setCarousel] = useState(false);
@@ -440,7 +444,14 @@ const Home = () => {
         </Box>
         <hr />
         {/* -------------------------------Carousel------------------------------------------ */}
-        <Box backgroundColor="white">
+
+        
+
+
+
+        <Box backgroundColor="white"
+         backgroundSize="cover"
+         backgroundPosition="center">
           <Flex>
             <Box
               w={{ base: "0%", md: "35%" }}
@@ -470,124 +481,126 @@ const Home = () => {
                 p="20px"
                 fontSize={{ base: "12px", sm: "13px", md: "15px", lg: "20px" }}
               >
-                IndiaMART is India's largest online B2B marketplace, connecting
+                B2B Portal is India's largest online B2B marketplace, connecting
                 buyers with suppliers.
               </Text>
-              <Image
-                p={{
-                  base: "0px",
-                  md: "10px 20px 10px 20px",
-                  xl: "30px 20px 10px 20px",
-                }}
-                w={{ md: "100%", lg: "80%" }}
-                src={carousel3}
-              />
-            </Box>
-            <Box
-              w={{ base: "100%", md: "65%" }}
-              display="flex"
-              justifyContent="center"
-              alignItems="center"
-            >
-              <Box w="100%" p="20px">
-                {Carousel ? (
-                  <Image src={carousel1} />
-                ) : (
-                  <Box position="relative">
-                    <Image src={carousel2} />
-                    <Box
-                      border="1px solid gray"
-                      left="50%"
-                      top="20%"
-                      p="15px"
-                      w="50%"
-                      position="absolute"
-                    >
-                      <Flex>
-                        <Select
-                          fontSize={{ base: "10px", sm: "12px", md: "13px" }}
-                          backgroundColor="#ececec"
-                          color="#333"
-                          width={{ sm: "20%", md: "30%" }}
-                          h={{ base: "20px", md: "30px" }}
-                          display={{ base: "none", sm: "flex" }}
-                          borderRadius="0px"
-                          placeholder="All India"
-                        >
-                          {state?.map((el) => (
-                            <option
-                            key={Math.random()}
-                              style={{ fontSize: "12px" }}
-                              value="option2"
-                            >
-                              {el}
-                            </option>
-                          ))}
-                        </Select>
-                        <Input
-                          fontSize={{ base: "11px", sm: "12px", md: "13px" }}
-                          variant="unstyled"
-                          placeholder=" Enter product/service name"
-                          bg="white"
-                          h={{
-                            base: "15px",
-                            sm: "15px",
-                            md: "20px",
-                            xl: "25px",
-                          }}
-                          p="10px"
-                          borderRadius="0px"
-                        />
-                      </Flex>
-                      <Input
-                        fontSize={{ base: "11px", sm: "12px", md: "13px" }}
-                        variant="unstyled"
-                        placeholder="Mobile No."
-                        bg="white"
-                        h={{ base: "15px", sm: "15px", md: "20px", xl: "25px" }}
-                        m="5px 0px"
-                        borderRadius="0px"
-                        p="10px"
-                      />
-                      <Input
-                        display={{ base: "none", sm: "flex" }}
-                        fontSize={{ base: "11px", sm: "12px", md: "13px" }}
-                        variant="unstyled"
-                        placeholder=" Enter Your Name"
-                        bg="white"
-                        h={{ base: "15px", sm: "15px", md: "20px", xl: "25px" }}
-                        p="10px"
-                        m="5px 0px"
-                        borderRadius="0px"
-                      />
-                      <Button
-                        fontSize={{ base: "11px", sm: "12px", md: "13px" }}
-                        borderRadius="0px"
-                        fontFamily="arial"
-                        background="-webkit-gradient(linear,left top,left bottom,from(#058b80),to(#02625a))"
-                        colorScheme="#fff"
-                        border="none"
-                        margin="0"
-                        h={{ base: "15px", sm: "25px", md: "30px", xl: "40px" }}
-                        position="relative"
-                        left="-4px"
-                        top="0"
-                        cursor="pointer"
-                        width="142px"
-                        fontWeight="700"
-                        text-indent="30px"
-                      >
-                        Search
-                      </Button>
-                    </Box>
-                  </Box>
-                )}
-              </Box>
-            </Box>
-          </Flex>
-        </Box>
-        {/* ------------------------------Construction------------------------------------ */}
+      <Box w="100%" p="20px">
+        {/* Render your image or carousel here */}
+      </Box>
+    </Box>
+  </Flex>
+  {/* -----------------------------cards----------------------------- */}
+  <Box backgroundColor="white">
+  <Flex flexWrap="wrap">
+    {sec3.map((item, index) => (
+      <Box
+        key={index}
+        width={{ base: "100%", sm: "50%", md: "25%" }}
+        p={{ base: "10px", sm: "20px" }}
+      >
         <Box
+          borderRadius="10px"
+          boxShadow="0 4px 8px 0 rgba(0,0,0,0.2)"
+          overflow="hidden"
+        >
+          <Image src={item.img} alt={item.title} />
+          <Box p="20px">
+            <Text
+              fontSize="20px"
+              fontWeight="bold"
+              color="#333"
+              marginBottom="10px"
+            >
+              {item.title}
+            </Text>
+            <Box>
+              <Text>{item.d1}</Text>
+              <Text>{item.d2}</Text>
+              <Text>{item.d3}</Text>
+              {item.d4 && <Text>{item.d4}</Text>}
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    ))}
+  </Flex>
+</Box>
+
+
+
+
+</Box>
+
+<h1>How Are you dear</h1>
+
+{/* {............................................................................ddd} */}
+
+
+
+{/* const Card = ({ title, description, imageUrl }) => {
+  return (
+    <Box
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      boxShadow="lg"
+      m="4"
+    >
+      <Image src={imageUrl} alt={title} />
+
+      <Box p="6">
+        <Box d="flex" alignItems="baseline">
+          <Text fontWeight="semibold" fontSize="lg" color="gray.700">
+            {title}
+          </Text>
+        </Box>
+
+        <Box mt="1" lineHeight="tight">
+          <Text color="gray.600">{description}</Text>
+        </Box>
+      </Box>
+    </Box>
+  );
+}; */}
+
+
+{/* const FourCards = () => {
+  return (
+    <Flex justifyContent="center" flexWrap="wrap">
+      <Card
+        title="Card 1"
+        description="Description of card 1."
+        imageUrl="https://via.placeholder.com/300"
+      />
+      <Card
+        title="Card 2"
+        description="Description of card 2."
+        imageUrl="https://via.placeholder.com/300"
+      />
+      <Card
+        title="Card 3"
+        description="Description of card 3."
+        imageUrl="https://via.placeholder.com/300"
+      />
+      <Card
+        title="Card 4"
+        description="Description of card 4."
+        imageUrl="https://via.placeholder.com/300"
+      />
+    </Flex>
+  );
+};
+
+export default FourCards; */}
+
+
+
+
+
+
+        {/* ------------------------------Construction------------------------------------ */}
+        {/*<Box
           borderTop="3px solid purple"
           backgroundColor="white"
           marginTop="20px"
@@ -697,11 +710,125 @@ const Home = () => {
                   </Box>
                 </Flex>
               ))}
+            </SimpleGrid> 
+          </Flex>
+              </Box>*/}
+
+               {/* -------------------------------Industrial---------------------------------- */}
+        <Box
+          borderTop="3px solid purple"
+          backgroundColor="white"
+          marginTop="20px"
+          w="96%"
+        >
+          <Heading
+            align="left"
+            p="5px 10px"
+            fontSize={{ base: "18px", sm: "22px", md: "28px" }}
+            fontFamily="Arial"
+            color="#333"
+          >
+            Industrial Plants, Machinery & Equipment
+          </Heading>
+          <Flex height="100%" w="95%" m="auto" p="10px 0px">
+            <Box
+              w={{ base: "0%", xl: "28%" }}
+              visibility={{ base: "hidden", xl: "visible" }}
+            >
+              <Box
+                position="relative"
+                backgroundImage="https://hm.imimg.com/imhome_gifs/industrial-plants-machinery.jpg"
+              >
+                <a href="/">
+                  <Button
+                    top="400px"
+                    right="30%"
+                    position="absolute"
+                    fontSize={{ base: "12px", sm: "13px", md: "15px" }}
+                    borderRadius="0px"
+                    fontFamily="arial"
+                    background="teal"
+                    colorScheme="white"
+                    p="5px 22px"
+                    border="none"
+                    margin="0"
+                    height={{ base: "20px", sm: "30px", md: "50px" }}
+                    cursor="pointer"
+                    width="142px"
+                    fontWeight="700"
+                    text-indent="30px"
+                  >
+                    View All
+                  </Button>
+                </a>
+              </Box>
+              <Image
+                height="100%"
+                p="0px 20px 0px 0px"
+                objectFit="cover"
+                src="https://hm.imimg.com/imhome_gifs/industrial-plants-machinery.jpg"
+              />
+            </Box>
+            <SimpleGrid
+              height="100%"
+              w={{ base: "100%", xl: "72%" }}
+              columns={{ base: 2, md: 3 }}
+              spacing={5}
+            >
+              {sec4.map((el) => (
+                <Flex
+                key={Math.random()}
+                  p="10px"
+                  flexDirection={{ base: "column", sm: "row" }}
+                  boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+                >
+                  <Box w="50%">
+                    <Image src={el.img} />
+                  </Box>
+                  <Box p="0px 10px" align="start">
+                    <Text
+                      fontSize={{ base: "10px", sm: "12px", md: "13px" }}
+                      pb="5px"
+                      fontWeight="700"
+                    >
+                      {el.title}
+                    </Text>
+                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d1}</Text>
+                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d2}</Text>
+                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d3}</Text>
+                  </Box>
+                </Flex>
+              ))}
+              {hide4.map((el) => (
+                <Flex
+                  key={Math.random()}
+                  display={{ base: "none", md: "flex" }}
+                  p="10px"
+                  flexDirection={{ base: "column", sm: "row" }}
+                  boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
+                >
+                  <Box w="50%">
+                    <Image src={el.img} />
+                  </Box>
+                  <Box p="0px 10px" align="start">
+                    <Text
+                      fontSize={{ base: "10px", sm: "12px", md: "13px" }}
+                      pb="5px"
+                      fontWeight="700"
+                    >
+                      {el.title}
+                    </Text>
+                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d1}</Text>
+                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d2}</Text>
+                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d3}</Text>
+                  </Box>
+                </Flex>
+              ))}
             </SimpleGrid>
           </Flex>
         </Box>
         {/* ------------------------------Electronics------------------------------- */}
-        <Box
+       {/* <Box
           borderTop="3px solid purple"
           backgroundColor="white"
           marginTop="20px"
@@ -819,7 +946,7 @@ const Home = () => {
               ))}
             </SimpleGrid>
           </Flex>
-        </Box>
+               </Box>*/}
         {/* -------------------------------Cities------------------------------------- */}
         <Box
           borderTop="3px solid purple"
@@ -832,7 +959,7 @@ const Home = () => {
             p="5px 10px"
             fontSize={{ base: "18px", sm: "22px", md: "30px" }}
             fontFamily="Arial"
-            color="#333"
+            color="#148"
           >
             Find Suppliers from Top Cities
           </Heading>
@@ -843,6 +970,7 @@ const Home = () => {
               p={{ base: "10px 0px", md: "25px 0px" }}
               cursor="pointer"
             >
+              {/* City Icon Images */}
               <Image
                 src={c1}
                 pb="10px"
@@ -1248,121 +1376,9 @@ const Home = () => {
             </Box>
           </Flex>
         </Box>
-        {/* -------------------------------Industrial---------------------------------- */}
-        <Box
-          borderTop="3px solid purple"
-          backgroundColor="white"
-          marginTop="20px"
-          w="96%"
-        >
-          <Heading
-            align="left"
-            p="5px 10px"
-            fontSize={{ base: "18px", sm: "22px", md: "28px" }}
-            fontFamily="Arial"
-            color="#333"
-          >
-            Industrial Plants, Machinery & Equipment
-          </Heading>
-          <Flex height="100%" w="95%" m="auto" p="10px 0px">
-            <Box
-              w={{ base: "0%", xl: "28%" }}
-              visibility={{ base: "hidden", xl: "visible" }}
-            >
-              <Box
-                position="relative"
-                backgroundImage="https://hm.imimg.com/imhome_gifs/industrial-plants-machinery.jpg"
-              >
-                <a href="/">
-                  <Button
-                    top="400px"
-                    right="30%"
-                    position="absolute"
-                    fontSize={{ base: "12px", sm: "13px", md: "15px" }}
-                    borderRadius="0px"
-                    fontFamily="arial"
-                    background="teal"
-                    colorScheme="white"
-                    p="5px 22px"
-                    border="none"
-                    margin="0"
-                    height={{ base: "20px", sm: "30px", md: "50px" }}
-                    cursor="pointer"
-                    width="142px"
-                    fontWeight="700"
-                    text-indent="30px"
-                  >
-                    View All
-                  </Button>
-                </a>
-              </Box>
-              <Image
-                height="100%"
-                p="0px 20px 0px 0px"
-                objectFit="cover"
-                src="https://hm.imimg.com/imhome_gifs/industrial-plants-machinery.jpg"
-              />
-            </Box>
-            <SimpleGrid
-              height="100%"
-              w={{ base: "100%", xl: "72%" }}
-              columns={{ base: 2, md: 3 }}
-              spacing={5}
-            >
-              {sec4.map((el) => (
-                <Flex
-                key={Math.random()}
-                  p="10px"
-                  flexDirection={{ base: "column", sm: "row" }}
-                  boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
-                >
-                  <Box w="50%">
-                    <Image src={el.img} />
-                  </Box>
-                  <Box p="0px 10px" align="start">
-                    <Text
-                      fontSize={{ base: "10px", sm: "12px", md: "13px" }}
-                      pb="5px"
-                      fontWeight="700"
-                    >
-                      {el.title}
-                    </Text>
-                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d1}</Text>
-                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d2}</Text>
-                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d3}</Text>
-                  </Box>
-                </Flex>
-              ))}
-              {hide4.map((el) => (
-                <Flex
-                  key={Math.random()}
-                  display={{ base: "none", md: "flex" }}
-                  p="10px"
-                  flexDirection={{ base: "column", sm: "row" }}
-                  boxShadow="rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
-                >
-                  <Box w="50%">
-                    <Image src={el.img} />
-                  </Box>
-                  <Box p="0px 10px" align="start">
-                    <Text
-                      fontSize={{ base: "10px", sm: "12px", md: "13px" }}
-                      pb="5px"
-                      fontWeight="700"
-                    >
-                      {el.title}
-                    </Text>
-                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d1}</Text>
-                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d2}</Text>
-                    <Text fontSize={{ base: "10px", sm: "12px" }}>{el.d3}</Text>
-                  </Box>
-                </Flex>
-              ))}
-            </SimpleGrid>
-          </Flex>
-        </Box>
+       
         {/* -------------------------------Software---------------------------------- */}
-        <Flex
+        {/*<Flex
           borderTop="3px solid purple"
           backgroundColor="white"
           marginTop="20px"
@@ -1436,9 +1452,9 @@ const Home = () => {
               src={software2}
             />
           </Box>
-        </Flex>
+        </Flex> */}
         {/* -------------------------------Mobile App--------------------------------- */}
-        <Flex
+        {/* <Flex
           borderTop="3px solid purple"
           backgroundColor="white"
           justifyContent="space-evenly"
@@ -1502,7 +1518,7 @@ const Home = () => {
             </Text>
             <Image w={{ base: "20%", md: "50%" }} src={app2} />
           </Box>
-        </Flex>
+        </Flex> */}
         </Box>
         }
         {/* ------------------------------------------------------------------------- */}

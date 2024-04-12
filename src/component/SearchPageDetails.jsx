@@ -29,7 +29,7 @@ const SearchPageDetails = ({name}) => {
        //setData(res.data)
        setLoading(!loading)
    },2000)
-    return axios.get("https://trademart-data-2zur.vercel.app/Allproducts", {
+    return axios.get("https://B2B Portal-data-2zur.vercel.app/Allproducts", {
       params: {
         q: name,
       },

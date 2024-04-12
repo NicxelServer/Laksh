@@ -67,7 +67,7 @@ const Footer = () => {
         </SimpleGrid>
       </Container>
       <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-        © 2022 TRADEMART. All rights reserved
+        © 2022 B2B Portal. All rights reserved
       </Text>
     </Box>
   );

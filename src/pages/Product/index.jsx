@@ -11,7 +11,7 @@ import axios from "axios";
 export default function Product() {
   const getserver = async () => {
     let res = await axios.get(
-      "https://trademart-data-2zur.vercel.app/medicines"
+      "https://B2B Portal-data-2zur.vercel.app/medicines"
     );
   };
 

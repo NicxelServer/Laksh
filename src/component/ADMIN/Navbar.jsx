@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
 import { BellIcon, DragHandleIcon } from "@chakra-ui/icons";
-import logo from "../../assets/logo.png";
+// import logo from "../../assets/logo.png";
 import Styles from "./Admin.module.css";
 import { getItem } from "../../utility/localStorage";
 import { Link } from "react-router-dom";
@@ -19,7 +19,7 @@ const Navbar = () => {
         <Flex justifyContent="space-between">
           <Box w="20%" p={3}>
             <Link to={"/"}>
-              <Image w="50%" ml={6} src={logo} alt="" />
+              {/* <Image w="50%" ml={6} src={logo} alt="" /> */}
             </Link>
           </Box>
           <Box w="20%" p={3}>

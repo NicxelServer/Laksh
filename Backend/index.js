@@ -20,7 +20,7 @@ app.use(cors());
 
 
 app.get("/", (request, response) => {
-    response.send("Welcome to TradeMart website");
+    response.send("Welcome to B2B Portal website");
 });
 
 app.use("/users", authRouter);
@@ -31,6 +31,8 @@ app.use("/projector", projectorRouter);
 app.use("/solarpanel", solarpanelRouter);
 
 app.use("/cart",cartRouter)
+
+
  
 
 

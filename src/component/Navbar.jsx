@@ -14,7 +14,7 @@ import { AiOutlineHome, AiOutlineSetting, AiOutlineTag } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
 //-----------***------------------------------------------------------------------
-import Logo from "../assets/logo.png";
+// import Logo from "../assets/logoa.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -104,14 +104,15 @@ let tocken = getItem("userData");
   return (
     <>
 
-      <Box backgroundColor="#2E3192" style={styleNev} >
+      <Box backgroundColor="#FFC20E
+" style={styleNev} >
 
      
         <Flex h={14} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={{ base: 3, md: 8 }} alignItems={"center"}>
 
             <Link to="/" ><Box w={["120px", "140px", "160px", "200px"]}>
-              <Image src={Logo} />
+              {/* <Image src={Logo} /> */}
             </Box></Link>
 
           </HStack>
@@ -127,14 +128,14 @@ let tocken = getItem("userData");
                   color="#dbdbdb"
                   cursor="pointer"
                 />
-                <Text cursor="pointer" fontSize="12px" color="white">
-                  Shopping
+                <Text cursor="pointer" fontSize="12px" color="black">
+                  <b>Shopping</b>
                 </Text>
               </Box>
               <Box align="center">
                 <BsShop fontSize="20px" color="#dbdbdb" cursor="pointer" />
-                <Text cursor="pointer" fontSize="12px" color="white">
-                  Sell
+                <Text cursor="pointer" fontSize="12px" color="grey">
+                 <b>Sell</b> 
                 </Text>
               </Box>
               <Box align="center">
@@ -144,7 +145,7 @@ let tocken = getItem("userData");
                   cursor="pointer"
                 />
                 <Text cursor="pointer" fontSize="12px" color="white">
-                  Shopping
+                <b>Shopping</b>
                 </Text>
               </Box>
               <Box align="center">
@@ -154,7 +155,7 @@ let tocken = getItem("userData");
                   cursor="pointer"
                 />
                 <Text cursor="pointer" fontSize="12px" color="white">
-                  Message
+                  <b>Message</b>
                 </Text>
               </Box>
               <Popover>
@@ -166,8 +167,8 @@ let tocken = getItem("userData");
                       cursor="pointer"
                     />
                     <Text cursor="pointer" fontSize="12px" color="white">
-                     {  tocken ? "user":"Sign In"}
-                    </Text>
+    {tocken ? "user" : <span style={{ fontWeight: 'bold' }}>Sign In</span>}
+</Text>
                   </Box>
                 </PopoverTrigger>
                 <PopoverContent
@@ -185,7 +186,7 @@ let tocken = getItem("userData");
                         <UserLogin handleLogout={handleLogout} admin={admin} handlechenge ={handlechenge} Registarion ={Registarion} handleLogin ={handleLogin}setRegistarion ={setRegistarion}setConform ={setConform}cred ={cred}conform ={conform}handleClick ={handleClick}/>
 
                       <Text fontSize={{ base: "11px", md: "12px" }}>
-                        New to TRADEMART{" "}
+                        New to B2B Portal{" "}
                         <span style={{ color: "blue" }}>Join Now</span>
                       </Text>
                     </Box>
@@ -273,12 +274,12 @@ let tocken = getItem("userData");
                   </PopoverBody>
                   <PopoverFooter>
                     <Box>
-                      <Box p="10px 0px">
+                      {/* <Box p="10px 0px">
                         <Text
                           fontSize={{ base: "12px", md: "14px" }}
                           fontWeight="500"
                         >
-                          Pay with TRADEMART
+                          Pay with B2B Portal
                         </Text>
                         <Text
                           fontSize={{ base: "12px", md: "14px" }}
@@ -286,14 +287,14 @@ let tocken = getItem("userData");
                         >
                           Secure & hassle-free payments
                         </Text>
-                      </Box>
+                      </Box> */}
                       <hr />
-                      <Box p="10px 0px">
+                      {/* <Box p="10px 0px">
                         <Text
                           fontSize={{ base: "12px", md: "14px" }}
                           fontWeight="500"
                         >
-                          Ship with TRADEMART
+                          Ship with B2B Portal
                         </Text>
                         <Text
                           fontSize={{ base: "12px", md: "14px" }}
@@ -301,16 +302,16 @@ let tocken = getItem("userData");
                         >
                           Easy booking & transport
                         </Text>
-                      </Box>
+                      </Box> */}
                       <hr />
                       <Box m="15px 0px">
-                        <Text
+                        {/* <Text
                           fontSize={{ base: "12px", md: "14px" }}
                           fontWeight="500"
                           display="flex"
                         >
                           <BiMobile fontSize="20px" color="gray" /> Download APP
-                        </Text>
+                        </Text> */}
                       </Box>
                       <hr />
                     </Box>
@@ -347,13 +348,13 @@ let tocken = getItem("userData");
 
               </Text>
               <Text cursor="pointer" fontSize="12px" color="white">
-                Message
+              <b>Message</b>
               </Text>
               <Text cursor="pointer" fontSize="12px" color="white">
-                Shopping
+              <b>Shopping</b>
               </Text>
               <Text cursor="pointer" fontSize="12px" color="white">
-                Help
+              <b>Help</b>
               </Text>
               <Text cursor="pointer" fontSize="12px" color="white">
                 

@@ -54,7 +54,7 @@ const ProductDetails = () => {
   const getRelatedProduct = async () => {
 
     const product = await axios.get(
-      `https://trademart-data-2zur.vercel.app/${productType}`
+      `https://B2B Portal-data-2zur.vercel.app/${productType}`
     ).then((res) => {
       setLoading(true);
       console.log(loading)
@@ -71,7 +71,7 @@ const ProductDetails = () => {
   // Fetch the Particular Product according to id
   const getProduct = async (id) => {
      const product = await axios.get(
-      `https://trademart-data-2zur.vercel.app/Allproducts/${id}`
+      `https://B2B Portal-data-2zur.vercel.app/Allproducts/${id}`
     );
     setData(product.data);
   };
