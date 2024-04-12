@@ -32,13 +32,13 @@ Route::get('/', function () {
 });
 
 
-Route::post('/adminlogs',[AuthController::class,'login']);
+Route::post('/adminlogs',[AuthController::class,'adminLogin']);
 
-Route::middleware(['preventBackHistory'])->group(function () {
+// Route::middleware(['preventBackHistory'])->group(function () {
 
 
 
-});
+// });
 
 //Route::post('/register',[UserController::class,'register']);
 Route::post('/register',[AuthController::class,'register']);

@@ -6,12 +6,12 @@ import Allroutes from "./component/Allroutes";
 function App() {
   return (
     <div>
-      <Allroutes /> 
+       {/* <Allroutes />   */}
       {/* <Registration />
       <br></br>
       <Login /> */}
       {/* <Home /> */}
-
+      <Allroutes />
     </div>
   );
 }

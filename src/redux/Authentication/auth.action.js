@@ -7,6 +7,7 @@ import {
   GetAllAdminAPI,
   GetAllUseresAPI,
   LoginApi,
+  AdminLoginApi,
   LogoutApi,
 } from "./auth.api";
 
@@ -89,3 +90,30 @@ export const GetAllAdmin = () => async (dispatch) => {
     dispatch({ type: types.Get_Admin_ERROR });
   }
 };
+
+export const adminLogin =
+  (cred = {}) =>
+  async (dispatch) => {
+    dispatch({ type: types.Get_Admin_LOADING });
+
+    try {
+      let data = await AdminLoginApi(cred); // Assuming LoginApi is the API function for admin login
+      dispatch({ type: types.Get_Admin_SUCCESS, payload: data });
+    } catch (error) {
+      dispatch({ type: types.Get_Admin_ERROR });
+    }
+  };
+
+
+// export const LoginUser2 =
+//   (cred = {}) =>
+//   async (dispatch) => {
+//     dispatch({ type: types.LOGIN_USER_LOADING });
+
+//     try {
+//       let data = await LoginApi(cred);
+//       dispatch({ type: types.LOGIN_USER_SUCCESS, payload: data });
+//     } catch (error) {
+//       dispatch({ type: types.LOGIN_USER_ERROR });
+//     }
+//   };

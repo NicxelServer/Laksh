@@ -1,18 +1,14 @@
-export const setItem = (key, value) =>
-  localStorage.setItem(key, JSON.stringify(value));
+export const setItem = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 
 export const getItem = (key) => {
   const data = localStorage.getItem(key);
   try {
     return data ? JSON.parse(data) : null;
   } catch (error) {
-    console.error('Error parsing JSON for key:', key, 'Error:', error);
+   // console.error('Error parsing JSON for key:', key, 'Error:', error);
     return null; // Or handle the error as needed
   }
 };
-
-
-
 
 export const removeItem = (key) => localStorage.removeItem(key);
 
