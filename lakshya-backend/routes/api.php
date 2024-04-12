@@ -35,6 +35,12 @@ Route::get('/', function () {
 //admin login 
 Route::post('/login',[AuthController::class,'login']);
 
+//user registrtion
+Route::post('/register',[AuthController::class,'register']);
+
+//user login
+Route::post('/logsin',[AuthController::class,'uLogin']);
+
 //create uom
 Route::post('/unit-of-measurements',[AdminController::class,'createUOM']);
 
@@ -67,7 +73,7 @@ Route::middleware(['preventBackHistory'])->group(function () {
 
 });
 
-Route::post('/register',[UserController::class,'register']);
+
 
 
 
