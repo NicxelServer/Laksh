@@ -34,10 +34,7 @@ class AuthController extends Controller
 
     }
 
-    public function hello()
-    {
-        return response()->json(['message' => 'Narayan Peth Badshah Boys'], 200);
-    }
+    
 
     public function register(Request $request)
     {
