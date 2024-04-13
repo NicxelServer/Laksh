@@ -230,12 +230,17 @@ const location = useLocation();
                     onChange={handlechenge}
                   ></Input>
                   <Button
-                    onClick={handleLogin}
-                    fontFamily="arial"
-                    background="-webkit-gradient(linear,left top,left bottom,from(#058b80),to(#02625a))"
-                    colorScheme="#fff"
-                    mr={3}
-                  >
+  onClick={() => {
+    handleLogin();
+    setTimeout(() => {
+      window.location.reload();
+    }, 5000);
+  }}
+  fontFamily="arial"
+  background="-webkit-gradient(linear,left top,left bottom,from(#058b80),to(#02625a))"
+  colorScheme="#fff"
+  mr={3}
+>
                     {isLoading ? <Spinner /> : "Login"}{" "}
                   </Button>
                   <Link onClick={() => setRegistarion(true)}>
