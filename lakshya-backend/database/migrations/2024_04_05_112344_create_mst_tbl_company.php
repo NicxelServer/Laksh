@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mst_tbl_companies', function (Blueprint $table) {
             $table->id('tbl_company_id');
-            $table->unsignedInteger('tbl_user_id');
+            $table->unsignedBigInteger('tbl_user_id'); // Match data type with tbl_user_id in mst_tbl_users
             $table->foreign('tbl_user_id')->references('tbl_user_id')->on('mst_tbl_users')->onDelete('cascade');
             $table->string('c_name', 255);
             $table->string('c_cin_no', 21);
