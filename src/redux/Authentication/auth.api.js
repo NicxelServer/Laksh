@@ -19,25 +19,38 @@ const AdminRef = collection(db, "Admin");
 
 export const AddUserApi = async (cred) => {
   try {
-    let res=await axios.post(`https://frail-gold-hen.cyclic.app/users/register`,cred)
+    let res = await axios.post(`http://localhost:8000/api/register`, cred)
     return res.data
   } catch (error) {
-    
+
   }
 
- 
+
 };
+
+
 
 export const LoginApi = async (cred) => {
- try {
-  let res= await axios.post(`https://frail-gold-hen.cyclic.app/users/login`,cred)
-   
-  return res.data
+  try {
+    let res = await axios.post(`http://localhost:8000/api/logsin`, cred)
 
- } catch (error) {
-  
- }
+    return res.data
+
+  } catch (error) {
+
+  }
 };
+
+export const AdminLoginApi = async (cred) => {
+  try {
+    let res = await axios.post(`http://localhost:8000/api/login`, cred);
+    return res.data;
+  } catch (error) {
+    console.error("AdminLoginApi error:", error);
+    throw error; // You can also return a custom error message here if needed
+  }
+};
+
 
 export const LogoutApi = async () => {
   let res = await auth.signOut();
@@ -70,7 +83,9 @@ export const AddAdminApi = async (cred) => {
 
 export const GetAllAdminAPI = async () => {
   let res = await getDocs(AdminRef);
+
+  
   return res.docs;
 };
 
-export const DeleteAdmin = async () => {};
+export const DeleteAdmin = async () => { };

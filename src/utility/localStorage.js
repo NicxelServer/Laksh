@@ -6,7 +6,7 @@ export const getItem = (key) => {
   try {
     return data ? JSON.parse(data) : null;
   } catch (error) {
-    console.error('Error parsing JSON for key:', key, 'Error:', error);
+    //console.error('Error parsing JSON for key:', key, 'Error:', error);
     return null; // Or handle the error as needed
   }
 };
