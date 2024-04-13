@@ -34,10 +34,7 @@ class AuthController extends Controller
 
     }
 
-    public function hello()
-    {
-        return response()->json(['message' => 'Narayan Peth Badshah Boys'], 200);
-    }
+   
 
     public function register(Request $request)
     {
@@ -53,6 +50,10 @@ class AuthController extends Controller
         $user->add_date = Date::now()->toDateString();
         $user->add_time = Date::now()->toTimeString();
         $user->save();
+
+        //insert entry into mst_tbl_companies
+        $userId = $user->tbl_user_id;
+
 
         return response()->json(['message' => 'Registration Successfull'], 200);
     }
@@ -83,4 +84,6 @@ class AuthController extends Controller
         }
 
     }
+
+
 }
