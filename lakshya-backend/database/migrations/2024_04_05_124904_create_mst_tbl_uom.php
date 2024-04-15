@@ -24,6 +24,7 @@ return new class extends Migration
             $table->time('deleted_time')->nullable();
             $table->string('flag', 7)->default('show');
         });
+
     }
 
     /**
