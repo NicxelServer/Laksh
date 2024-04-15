@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\KeywordController;
+use App\Http\Controllers\UOMController;
 
 
 /*
@@ -42,11 +44,11 @@ Route::post('/register',[AuthController::class,'register']);
 Route::post('/logsin',[AuthController::class,'uLogin']);
 
 //create uom
-Route::post('/unit-of-measurements',[AdminController::class,'createUOM']);
+Route::post('/unit-of-measurements',[UOMController::class,'createUOM']);
 
-Route::get('/unit-of-measurements',[AdminController::class,'showUOM']);
+Route::get('/unit-of-measurements',[UOMController::class,'showUOM']);
 
-Route::delete('/unit-of-measurements/{id}',[AdminController::class,'deleteUOM']);
+Route::delete('/unit-of-measurements/{id}',[UOMController::class,'deleteUOM']);
 
 //create category
 Route::post('/categories',[CategoryController::class,'createCategory']);
@@ -65,6 +67,16 @@ Route::get('/sub-categories',[CategoryController::class,'viewSubCategories']);
 
 //delete sub categories
 Route::delete('/sub-categories/{id}',[CategoryController::class,'deleteSubCategory']);
+
+
+//create keywords
+Route::post('/keywords',[KeywordController::class,'createKeyword']);
+
+//show keywords
+Route::get('/keywords',[KeywordController::class,'showKeywords']);
+
+//delete Keywords
+Route::delete('/keywords/{id}',[KeywordController::class,'deleteKeywords']);
 
 
 Route::middleware(['preventBackHistory'])->group(function () {

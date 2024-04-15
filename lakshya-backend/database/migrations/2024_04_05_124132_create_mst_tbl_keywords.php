@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id('tbl_keyword_id');
             $table->string('keyword_name', 255);
             $table->unsignedBigInteger('add_by')->nullable();
-            $table->foreign('add_by')->references('tbl_company_id')->on('mst_tbl_companies');
+            $table->foreign('add_by')->references('tbl_user_id')->on('mst_tbl_users');
             $table->date('add_date');
             $table->time('add_time');
             $table->unsignedBigInteger('deleted_by')->nullable();
