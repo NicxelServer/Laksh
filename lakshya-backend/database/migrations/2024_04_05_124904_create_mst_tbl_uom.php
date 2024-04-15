@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mst_tbl_uom', function (Blueprint $table) {
             $table->id('tbl_uom_id');
-            $table->string('unit_name', 255);
+            $table->string('unit_name', 255)->unique();
             $table->unsignedBigInteger('add_by')->nullable();
             $table->foreign('add_by')->references('tbl_user_id')->on('mst_tbl_users');
             $table->date('add_date');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreign('deleted_by')->references('tbl_user_id')->on('mst_tbl_users');
             $table->date('deleted_date')->nullable();
             $table->time('deleted_time')->nullable();
-            $table->string('flag', 7)->default(show);
+            $table->string('flag', 7)->default('show');
         });
     }
 
