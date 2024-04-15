@@ -43,6 +43,7 @@ const Navbar = () => {
       ...cred,
       [name]: value,
     });
+    console.warn('Credentials:', cred);
   };
   const { isLoading, isError, userData, isAuth, userlist, adminlist } =
     useSelector((store) => store.auth);

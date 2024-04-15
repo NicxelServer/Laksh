@@ -3,6 +3,7 @@ export const setItem = (key, value) =>
 
 export const getItem = (key) => {
   const data = localStorage.getItem(key);
+  console.warn(`Value of ${key} in localStorage:`, data);
   try {
     return data ? JSON.parse(data) : null;
   } catch (error) {

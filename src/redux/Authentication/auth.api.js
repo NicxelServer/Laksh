@@ -33,7 +33,7 @@ export const AddUserApi = async (cred) => {
 export const LoginApi = async (cred) => {
   try {
     let res = await axios.post(`http://localhost:8000/api/logsin`, cred)
-
+    
     return res.data
 
   } catch (error) {
