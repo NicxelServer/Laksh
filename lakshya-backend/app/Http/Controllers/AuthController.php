@@ -82,7 +82,12 @@ class AuthController extends Controller
 
         //if user exists validate password and redirect to respective page
         if (strcmp($user->u_password, $encPass) === 0) {
-            return response()->json(['message' => 'User logged in successfully'], 200);
+            $user->encUserId = EncDecHelper::encDecId($user->tbl_user_id,'encrypt');
+
+
+            // Unset the non-encrypted ID
+            unset($user->tbl_user_id,$user->u_password);
+            return response()->json(['user' => $user], 200);
         }else {
             // Password does not match, return error response
             return response()->json(['error' => 'Invalid password. Please enter a valid password.'], 400);

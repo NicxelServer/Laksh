@@ -10,6 +10,6 @@ use App\Helpers\EncDecHelper;
 
 class AdminController extends Controller
 {
-    //
+    
     
 }
