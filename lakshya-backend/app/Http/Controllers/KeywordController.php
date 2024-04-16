@@ -12,6 +12,19 @@ class KeywordController extends Controller
     //create a keyword
     public function createKeyword(Request $request)
     {
+        
+        try {
+            $validatedData = $request->validate([
+                'name' => [
+                    'required',
+                    'unique_keyword_based_on_flag', // Custom validation rule
+                ],
+            ]);
+        } catch (\Exception $e) {
+                return response()->json(['error' => "Keyword '{$request->name}' already exists"], 422);
+        }
+        
+
         try
         {
             $keyword = new Keyword;

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('tbl_bank_details', function (Blueprint $table) {
             $table->id('tbl_bank_detail_id');
-            $table->unsignedInteger('tbl_company_id');
+            $table->unsignedBigInteger('tbl_company_id');
             $table->foreign('tbl_company_id')->references('tbl_company_id')->on('mst_tbl_companies')->onDelete('cascade');
             
-            $table->string('acc_no', 12);
+            $table->string('acc_no', 12)->unique();
             $table->string('acc_name', 100);
             $table->string('ifsc', 11);
             $table->string('branch_name', 100);

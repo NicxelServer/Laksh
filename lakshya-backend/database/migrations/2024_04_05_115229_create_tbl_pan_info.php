@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('tbl_pan_info', function (Blueprint $table) {
             $table->id('tbl_pan_id');
-            $table->unsignedInteger('tbl_company_id');
+            $table->unsignedBigInteger('tbl_company_id');
             $table->foreign('tbl_company_id')->references('tbl_company_id')->on('mst_tbl_companies')->onDelete('cascade');
-            
-            $table->string('pan_no', 10);
-            $table->string('pan_status', 25);
+            $table->string('pan_no', 10)->unique();
+            $table->string('pan_status', 25)->default('Not Verified');
             $table->date('verified_date')->nullable();
             $table->time('verified_time')->nullable();
             $table->date('add_date');

@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('tbl_companies_social_info', function (Blueprint $table) {
             $table->id('tbl_csi_id');
-            $table->unsignedInteger('tbl_company_id');
+            $table->unsignedBigInteger('tbl_company_id');
             $table->foreign('tbl_company_id')->references('tbl_company_id')->on('mst_tbl_companies')->onDelete('cascade');
-            $table->text('webiste_url');
-            $table->text('instagram_url');
-            $table->text('facebook_url');
-            $table->string('google_url', 100);
+            $table->text('website_url')->nullable();
+            $table->text('instagram_url')->nullable();
+            $table->text('facebook_url'->nullable());
+            $table->text('google_url')->nullable();
             $table->date('add_date');
             $table->time('add_time');
             $table->date('updated_date')->nullable();

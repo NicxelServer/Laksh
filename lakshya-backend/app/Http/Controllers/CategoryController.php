@@ -14,10 +14,21 @@ class CategoryController extends Controller
     //
     public function createCategory(Request $request)
     {
+        try {
+            $validatedData = $request->validate([
+                'categoryName' => [
+                    'required',
+                    'unique_category_based_on_flag', // Custom validation rule
+                ],
+            ]);
+        } catch (\Exception $e) {
+                return response()->json(['error' => "Category '{$request->categoryName}' already exists"], 422);
+        }
+
         $category = new Category;
         $category->cat_name = $request->categoryName;
         //$category->add_by = $userDetails->tbl_user_id;
-        $category->add_by = '1';
+        $category->add_by = '2';
         $category->add_date = Date::now()->toDateString();
         $category->add_time = Date::now()->toTimeString();
         $category->save();
@@ -68,12 +79,23 @@ class CategoryController extends Controller
 
     public function createSubCategory(Request $request)
     {
+        try {
+            $validatedData = $request->validate([
+                'subCategoryName' => [
+                    'required',
+                    'unique_sub_category_based_on_flag', // Custom validation rule
+                ],
+            ]);
+        } catch (\Exception $e) {
+                return response()->json(['error' => "Sub-Category '{$request->subCategoryName}' already exists"], 422);
+        }
+
         $decSubCatId = EncDecHelper::encDecId($request->encCatId,'decrypt');
         $subCategory = new SubCategory;
         $subCategory->tbl_cat_id = $decSubCatId;
         $subCategory->sub_cat_name = $request->subCategoryName;
         //$subCategory->add_by = $userDetails->tbl_user_id;
-        $subCategory->add_by = '1';
+        $subCategory->add_by = '2';
         $subCategory->add_date = Date::now()->toDateString();
         $subCategory->add_time = Date::now()->toTimeString();
         $subCategory->save();

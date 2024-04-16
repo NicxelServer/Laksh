@@ -86,7 +86,7 @@ class AuthController extends Controller
 
 
             // Unset the non-encrypted ID
-            unset($user->tbl_user_id,$user->u_password);
+           // unset($user->tbl_user_id,$user->u_password);
             return response()->json(['user' => $user], 200);
         }else {
             // Password does not match, return error response

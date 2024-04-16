@@ -13,6 +13,19 @@ class UOMController extends Controller
     //
     public function createUOM(Request $request)
     {
+        
+        try {
+            $validatedData = $request->validate([
+                'unitName' => [
+                    'required',
+                    'unique_uom_based_on_flag', // Custom validation rule
+                ],
+            ]);
+        } catch (\Exception $e) {
+                return response()->json(['error' => "Keyword '{$request->unitName}' already exists"], 422);
+        }
+
+
         $uom = new UnitOfMeasurement;
         $uom->unit_name = $request->unitName;
         //$uom->add_by = $userDetails->tbl_user_id;

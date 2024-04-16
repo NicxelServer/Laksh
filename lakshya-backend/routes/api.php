@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\KeywordController;
 use App\Http\Controllers\UOMController;
+use App\Http\Controllers\CompanyRegistrationController;
+use App\Http\Controllers\ProductController;
 
 
 /*
@@ -77,6 +79,12 @@ Route::get('/keywords',[KeywordController::class,'showKeywords']);
 
 //delete Keywords
 Route::delete('/keywords/{id}',[KeywordController::class,'deleteKeywords']);
+
+//Register your company
+Route::post('/registeryourcompany',[CompanyRegistrationController::class,'registerCompany']);
+
+//Register Products
+Route::post('/registerProduct',[ProductController::class,'registerProduct']);
 
 
 Route::middleware(['preventBackHistory'])->group(function () {
