@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Company;
+use App\Models\Company;
 use App\Helpers\EncDecHelper;
 use Illuminate\Support\Facades\Date;
 
@@ -34,7 +36,8 @@ class AuthController extends Controller
 
     }
 
-
+   
+   
 
     public function register(Request $request)
     {
@@ -50,6 +53,22 @@ class AuthController extends Controller
         $user->add_date = Date::now()->toDateString();
         $user->add_time = Date::now()->toTimeString();
         $user->save();
+
+        //insert entry into mst_tbl_companies
+        $userId = $user->tbl_user_id;
+        $company = new Company;
+        $company->tbl_user_id = $userId;
+        $company->save();
+
+
+
+        //insert entry into mst_tbl_companies
+        $userId = $user->tbl_user_id;
+        $company = new Company;
+        $company->tbl_user_id = $userId;
+        $company->save();
+
+
 
         return response()->json(['message' => 'Registration Successfull'], 200);
     }
@@ -73,11 +92,24 @@ class AuthController extends Controller
 
         //if user exists validate password and redirect to respective page
         if (strcmp($user->u_password, $encPass) === 0) {
-            return response()->json(['message' => 'User logged in successfully'], 200);
+            $user->encUserId = EncDecHelper::encDecId($user->tbl_user_id,'encrypt');
+
+
+            // Unset the non-encrypted ID
+           // unset($user->tbl_user_id,$user->u_password);
+            return response()->json(['user' => $user], 200);
         }else {
             // Password does not match, return error response
             return response()->json(['error' => 'Invalid password. Please enter a valid password.'], 400);
         }
 
     }
+
+    
+
+
+
+    
+
+
 }

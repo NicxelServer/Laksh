@@ -10,7 +10,7 @@ class Company extends Model
     use HasFactory;
 
     protected $table = 'mst_tbl_companies';
-    protected $primaryKey = 'tbl_compnay_id';
+    protected $primaryKey = 'tbl_company_id';
     public $timestamps = false;
 
     public function user()

@@ -13,17 +13,17 @@ return new class extends Migration
     {
         Schema::create('tbl_gst_info', function (Blueprint $table) {
             $table->id('tbl_gst_id');
-            $table->unsignedInteger('tbl_company_id');
+            $table->unsignedBigInteger('tbl_company_id');
             $table->foreign('tbl_company_id')->references('tbl_company_id')->on('mst_tbl_companies')->onDelete('cascade');
-            $table->string('gst_no', 15);
-            $table->string('gst_status', 25);
+            $table->string('gst_no', 15)->unique();
+            $table->string('gst_status', 25)->default('Not Verified');
             $table->date('verified_date')->nullable();
             $table->time('verified_time')->nullable();
             $table->date('add_date');
             $table->time('add_time');
             $table->date('updated_date')->nullable();
             $table->time('updated_time')->nullable();
-            $table->string('flag', 45)->default('show');
+            $table->string('flag', 7)->default('show');
         });
     }
 
