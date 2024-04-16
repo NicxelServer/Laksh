@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Company;
+use App\Models\Company;
 use App\Helpers\EncDecHelper;
 use Illuminate\Support\Facades\Date;
 
@@ -36,6 +37,7 @@ class AuthController extends Controller
     }
 
    
+   
 
     public function register(Request $request)
     {
@@ -51,6 +53,14 @@ class AuthController extends Controller
         $user->add_date = Date::now()->toDateString();
         $user->add_time = Date::now()->toTimeString();
         $user->save();
+
+        //insert entry into mst_tbl_companies
+        $userId = $user->tbl_user_id;
+        $company = new Company;
+        $company->tbl_user_id = $userId;
+        $company->save();
+
+
 
         //insert entry into mst_tbl_companies
         $userId = $user->tbl_user_id;
@@ -94,6 +104,10 @@ class AuthController extends Controller
         }
 
     }
+
+    
+
+
 
     
 

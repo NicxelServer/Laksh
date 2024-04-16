@@ -47,9 +47,12 @@ Route::post('/logsin',[AuthController::class,'uLogin']);
 
 //create uom
 Route::post('/unit-of-measurements',[UOMController::class,'createUOM']);
+Route::post('/unit-of-measurements',[UOMController::class,'createUOM']);
 
 Route::get('/unit-of-measurements',[UOMController::class,'showUOM']);
+Route::get('/unit-of-measurements',[UOMController::class,'showUOM']);
 
+Route::delete('/unit-of-measurements/{id}',[UOMController::class,'deleteUOM']);
 Route::delete('/unit-of-measurements/{id}',[UOMController::class,'deleteUOM']);
 
 //create category
