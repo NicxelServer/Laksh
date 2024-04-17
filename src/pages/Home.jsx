@@ -246,6 +246,28 @@ const Home = () => {
   let sec4 = [
 
     {
+      img: "https://3.imimg.com/data3/UK/HT/MY-2/deck-125x125.jpg",
+      title: "Bakery & Dairy Machinery",
+      d1: "Bakery Machinery",
+      d2: "Bakery Oven",
+      d3: "Sweets Making Machine",
+    },
+    {
+      img: "https://5.imimg.com/data5/GLADMIN/Default/2022/6/MW/VE/VZ/87939/cnc-lathe-machine-125x125.png",
+      title: "CNC Machines & Lathe Machine",
+      d1: "Integrated Circuits",
+      d2: "Thyristors",
+      d3: "Light Emitting Diode",
+    },
+    {
+      img: "https://3.imimg.com/data3/TU/LV/GLADMIN-2070/flexographic-printing-machine-125x125.jpg",
+      title: "Printing Machine",
+      d1: "House Wire",
+      d2: "Armoured Cable",
+      d3: "Power Cable",
+    },
+
+    {
       img: "https://3.imimg.com/data3/WE/MN/MY-2/food-processing-machine-125x125.jpg",
       title: "Food Processing Machine",
       d1: "Flour Mill",
@@ -733,7 +755,7 @@ export default FourCards; */}
           </Heading>
           <Flex height="100%" w="95%" m="auto" p="10px 0px">
             <Box
-              w={{ base: "0%", xl: "28%" }}
+              w={{ base: "0%", xl: "auto%" }}
               visibility={{ base: "hidden", xl: "visible" }}
             >
 
@@ -781,7 +803,7 @@ export default FourCards; */}
             </Box>
             <SimpleGrid
               height="100%"
-              w={{ base: "-50%", xl: "auto" }}
+              w={{ base: "0%", xl: "auto" }}
               columns={{ base: 2, md: 3}}
               spacing={5}
             >
