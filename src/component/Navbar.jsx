@@ -128,13 +128,13 @@ let tocken = getItem("userData");
                   color="#dbdbdb"
                   cursor="pointer"
                 />
-                <Text cursor="pointer" fontSize="12px" color="black">
+                <Text cursor="pointer" fontSize="12px" color="white">
                   <b>Shopping</b>
                 </Text>
               </Box>
               <Box align="center">
                 <BsShop fontSize="20px" color="#dbdbdb" cursor="pointer" />
-                <Text cursor="pointer" fontSize="12px" color="grey">
+                <Text cursor="pointer" fontSize="12px" color="white">
                  <b>Sell</b> 
                 </Text>
               </Box>
@@ -145,7 +145,7 @@ let tocken = getItem("userData");
                   cursor="pointer"
                 />
                 <Text cursor="pointer" fontSize="12px" color="white">
-                <b>Shopping</b>
+                <b>Help</b>
                 </Text>
               </Box>
               <Box align="center">

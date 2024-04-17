@@ -43,7 +43,7 @@ const MegaMenu = () => {
                 h="100%"
               />
               <Text fontSize={{ base: "12px", sm: "14px", md: "16px" }}>
-                Building & Construction
+               Category 1
               </Text>
             </Box>
           </MenuButton>
@@ -543,7 +543,7 @@ const MegaMenu = () => {
                 h="100%"
               />
               <Text fontSize={{ base: "12px", sm: "14px", md: "16px" }}>
-                Electronics & Electrical
+              Category 2
               </Text>
             </Box>
           </MenuButton>
@@ -1013,7 +1013,7 @@ const MegaMenu = () => {
                 src={image3}
               />
               <Text fontSize={{ base: "12px", sm: "14px", md: "16px" }}>
-                Drugs & Pharma
+                Category 3
               </Text>
             </Box>
           </MenuButton>
@@ -1667,7 +1667,7 @@ const MegaMenu = () => {
                 src={image4}
               />
               <Text fontSize={{ base: "12px", sm: "14px", md: "16px" }}>
-                Industrial Machinery
+                Category 4
               </Text>
             </Box>
           </MenuButton>
@@ -2189,7 +2189,7 @@ const MegaMenu = () => {
                 src={image5}
               />
               <Text fontSize={{ base: "12px", sm: "14px", md: "16px" }}>
-                Industrial Supplies
+              Category 5
               </Text>
             </Box>
           </MenuButton>
@@ -2711,7 +2711,7 @@ const MegaMenu = () => {
                 src={image6}
               />
               <Text fontSize={{ base: "12px", sm: "14px", md: "16px" }}>
-                Food & Agriculture
+              Category 6
               </Text>
             </Box>
           </MenuButton>

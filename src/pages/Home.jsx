@@ -244,6 +244,7 @@ const Home = () => {
     },
   ];
   let sec4 = [
+
     {
       img: "https://3.imimg.com/data3/WE/MN/MY-2/food-processing-machine-125x125.jpg",
       title: "Food Processing Machine",
@@ -490,7 +491,7 @@ const Home = () => {
     </Box>
   </Flex>
   {/* -----------------------------cards----------------------------- */}
-  <Box backgroundColor="white">
+  {/* <Box backgroundColor="white">
   <Flex flexWrap="wrap">
     {sec3.map((item, index) => (
       <Box
@@ -524,14 +525,14 @@ const Home = () => {
       </Box>
     ))}
   </Flex>
-</Box>
+</Box> */}
 
 
 
 
 </Box>
 
-<h1>How Are you dear</h1>
+
 
 {/* {............................................................................ddd} */}
 
@@ -735,7 +736,10 @@ export default FourCards; */}
               w={{ base: "0%", xl: "28%" }}
               visibility={{ base: "hidden", xl: "visible" }}
             >
-              <Box
+
+                  {/* //  ---------------Button and image for view all-------------     > */}
+
+              {/* <Box
                 position="relative"
                 backgroundImage="https://hm.imimg.com/imhome_gifs/industrial-plants-machinery.jpg"
               >
@@ -761,18 +765,24 @@ export default FourCards; */}
                     View All
                   </Button>
                 </a>
-              </Box>
-              <Image
+              </Box> */}
+
+              {/* <Image
                 height="100%"
                 p="0px 20px 0px 0px"
                 objectFit="cover"
                 src="https://hm.imimg.com/imhome_gifs/industrial-plants-machinery.jpg"
-              />
+              /> */}
+
+              
+              {/* ------------------------------------------------------------------------------ */}
+
+
             </Box>
             <SimpleGrid
               height="100%"
-              w={{ base: "100%", xl: "72%" }}
-              columns={{ base: 2, md: 3 }}
+              w={{ base: "-50%", xl: "auto" }}
+              columns={{ base: 2, md: 3}}
               spacing={5}
             >
               {sec4.map((el) => (
@@ -799,6 +809,7 @@ export default FourCards; */}
                   </Box>
                 </Flex>
               ))}
+              
               {hide4.map((el) => (
                 <Flex
                   key={Math.random()}

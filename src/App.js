@@ -1,18 +1,30 @@
-import "./App.css";
-import Allroutes from "./component/Allroutes";
-//import Registration from "./Registration";
-//import UserHome from "./UserHome";
-//import AdminHome from "./AdminHome";
-import { LoginUser } from "./redux/Authentication/auth.action";
-  function App() {
-    return (
-      <div>
-        <Allroutes /> 
-        {/* <Registration /> */}
-        {/* <UserHome /> */}
-        {/* < AdminHome/> */}
-      </div>
-    );
-  }
+import React from 'react'
+import Allroutes from './component/Allroutes.jsx'
 
-export default App;
+// import Registration from "./Registration";
+// import UserHome from "./UserHome";
+// import AdminHome from "./AdminHome";
+// import Adm from "./Adm";
+// import AdminDashboard from './AdminDashboard.js'
+// import { LoginUser } from "./redux/Authentication/auth.action";
+// import UnitOfMeasurement from './UnitOfMeasurement.js'
+// import Keywords from './Keywords.js'
+// import Category from './Category.js'
+
+function App() {
+  return (
+    <div>
+      <Allroutes />
+      {/* <Registration /> */}
+      {/* <UserHome /> */}
+      {/* < AdminHome/> */}
+      {/* <AdminDashboard /> */}
+      {/* <Adm/> */}
+      {/* <UnitOfMeasurement/> */}
+      {/* <Keywords/> */}
+      {/* <Category/> */}
+    </div>
+  )
+}
+
+export default App
